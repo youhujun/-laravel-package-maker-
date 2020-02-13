@@ -1,0 +1,22 @@
+{
+    "name": "youhujun\/laravel-package-maker",
+    "description": "a composer laravel package maker",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "youhujun",
+            "email": "2900976495@qq.com"
+        }
+    ],
+    "require": {
+        "symfony/console": "^3.0|^4.0",
+        "symfony/process": "^3.0|^4.0",
+        "symfony/filesystem": "^3.0|^4.0"
+    },
+    "bin": ["bin/laravel-package-maker"],
+    "autoload": {
+        "psr-4": {
+            "YouHuJun\\LaravelPackageMaker\\": "src"
+        }
+    }
+}
