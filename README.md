@@ -7,11 +7,11 @@
 
 
 ```shell
-$ composer global require shineyork/laravel-package-maker:dev-master
+$ composer global require youhujun/laravel-package-maker:dev-master
 
 或者
 
-$ composer global require shineyork/laravel-package-maker
+$ composer global require youhujun/laravel-package-maker
 
 ```
 
@@ -36,8 +36,8 @@ laravel-package-maker build foo/bar
 Name of package (example: foo/bar): foo/bar
 Namespace of package [Foo\Bar]:
 Description of package:
-Author name of package [shineyork]:
-Author email of package [shineyork@sixstaredu.com]:
+Author name of package [youhujun]:
+Author email of package [2900976495@qq.com]:
 License of package [MIT]:
 laravel service provider name : FooServiceProvider
 Package foo/bar created in: ./foo/bar
