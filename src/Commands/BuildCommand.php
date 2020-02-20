@@ -80,6 +80,8 @@ class BuildCommand extends Command
         $this->stubsDirectory = __DIR__.'/../stubs/';
 
         $helper = $this->getHelper('question');
+
+        //获取git 全局配置数组
         $git = $this->getGitGlobalConfig();
 
         $config = [
@@ -91,12 +93,14 @@ class BuildCommand extends Command
                   ];
 
         $question = new Question('Name of package (example: <fg=yellow>foo/bar</fg=yellow>): ');
-        $question->setValidator(function ($value) {
+        $question->setValidator(function ($value) 
+        {
             if (trim($value) == '') {
                 throw new \Exception('The package name can not be empty');
             }
 
-            if (!preg_match('/[a-z0-9\-_]+\/[a-z0-9\-_]+/', $value)) {
+            if (!preg_match('/[a-z0-9\-_]+\/[a-z0-9\-_]+/', $value)) 
+            {
                 throw new \Exception('The package name is invalid, format: vendor/product');
             }
 
@@ -112,6 +116,7 @@ class BuildCommand extends Command
         $question = new Question("Namespace of package [<fg=yellow>{$defaultNamespace}</fg=yellow>]: ", $defaultNamespace);
         $this->info['NAMESPACE'] = $helper->ask($input, $output, $question);
         $this->info['VENDOR'] = strtolower(strstr($this->info['NAMESPACE'], '\\', true));
+
         $this->info['PACKAGE'] = substr($this->info['PACKAGE_NAME'], strlen($this->info['VENDOR']) + 1);
 
         // description
@@ -156,7 +161,8 @@ class BuildCommand extends Command
         $config = [];
         try {
             $segments = preg_split("/\n[\r]?/", trim(shell_exec('git config --list --global')));
-            foreach ($segments as $segment) {
+            foreach ($segments as $segment) 
+            {
                 list($key, $value) = array_pad(explode('=', $segment), 2, null);
                 $config[$key] = $value;
             }
@@ -191,7 +197,8 @@ class BuildCommand extends Command
             '/Resources/assets/img/',
         ];
 
-        foreach ($folder as $key => $value) {
+        foreach ($folder as $key => $value) 
+        {
             $this->fs->mkdir($this->packageDirectory.$value, 0755);
         }
 
