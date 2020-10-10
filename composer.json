@@ -9,9 +9,9 @@
         }
     ],
     "require": {
-        "symfony/console": "^4.0|^5.0",
-        "symfony/process": "^4.0|^5.0",
-        "symfony/filesystem": "^4.0|^5.0"
+        "symfony/console": "^3.0|^4.0",
+        "symfony/process": "^3.0|^4.0",
+        "symfony/filesystem": "^3.0|^3.0"
     },
     "bin": ["bin/laravel-package-maker"],
     "autoload": {
